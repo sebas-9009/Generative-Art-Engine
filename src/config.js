@@ -5,8 +5,8 @@ const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
 const { MODE } = require(path.join(basePath, "src/blendMode.js"));
 const description =
-  "The Llamas Society INC.";
-const baseUri = "ipfs://NewUriToReplace";
+  "The llama legion is lucky to have you and you were lucky enough to join the llama legion.";
+const baseUri = "image.png";
 
 const layerConfigurations = [
   {

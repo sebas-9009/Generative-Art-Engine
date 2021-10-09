@@ -112,7 +112,7 @@ const addMetadata = (_dna, _edition) => {
     dna: sha1(_dna.join("")),
     name: `#${_edition}`,
     description: description,
-    image: `${baseUri}/${_edition}.png`,
+    image: ``,
     edition: _edition,
     date: dateTime,
     ...extraMetadata,
@@ -224,7 +224,7 @@ const startCreating = async () => {
   let failedCount = 0;
   let abstractedIndexes = [];
   for (
-    let i = 1;
+    let i = 0;
     i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
     i++
   ) {
