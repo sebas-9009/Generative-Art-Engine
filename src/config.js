@@ -12,15 +12,14 @@ const layerConfigurations = [
   {
     growEditionSizeTo: 100,
     layersOrder: [
-      { name: "Background" },
-      { name: "CIRCLE" },
-      { name: "SKIN" },
-      { name: "FUR" },
-      { name: "MOUTH" },
-      { name: "EYES" },
-      { name: "DETAILEYE" },
-      { name: "OUTFITS" },
-      { name: "EARS" },
+      { name: "background" },
+      { name: "face" },
+      { name: "fur" },
+      { name: "eye" },
+      { name: "mouth" },
+      { name: "nose" },
+      { name: "outfit" },
+      { name: "ears" },
     ],
   },
 ];
