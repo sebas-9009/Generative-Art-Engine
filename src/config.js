@@ -38,7 +38,29 @@ const background = {
   brightness: "80%",
 };
 
-const extraMetadata = {};
+const extraMetadata = {
+  "symbol": "",
+  "properties": {
+    "files": [
+      {
+        "uri": "image.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators":[
+      {
+        "address": "FBtvjETjSWELeBf7FZ1AaRmDv2QwXwSzDVyHr2USbui8",
+        "share": 100
+      }
+    ]
+  },
+  "collection" :{
+    "name": "Lucky Llama Legion",
+    "family": "Lucky Llama Legion"
+  },
+  "seller_fee_basis_points": 250,
+};
 
 const rarityDelimiter = "#";
 
