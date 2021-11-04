@@ -5,21 +5,21 @@ const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
 const { MODE } = require(path.join(basePath, "src/blendMode.js"));
 const description =
-  "The llama legion is lucky to have you and you were lucky enough to join the llama legion.";
+  "The Llama Legion is lucky to have you and you were lucky enough to join the Llama Legion.";
 const baseUri = "image.png";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 100,
+    growEditionSizeTo: 1000,
     layersOrder: [
       { name: "background" },
       { name: "face" },
       { name: "fur" },
-      { name: "eye" },
       { name: "mouth" },
       { name: "nose" },
       { name: "outfit" },
       { name: "ears" },
+      { name: "eye" },
     ],
   },
 ];
@@ -29,8 +29,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 525,
+  height: 525,
 };
 
 const background = {
