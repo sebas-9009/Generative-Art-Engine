@@ -10,16 +10,15 @@ const baseUri = "image.png";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 1000,
+    growEditionSizeTo: 3477,
     layersOrder: [
-      { name: "background" },
-      { name: "face" },
-      { name: "fur" },
-      { name: "mouth" },
-      { name: "nose" },
-      { name: "outfit" },
-      { name: "ears" },
-      { name: "eye" },
+      { name: "Background" },
+      { name: "Face" },
+      { name: "Fur" },
+      { name: "Mouth" },
+      { name: "Outfit" },
+      { name: "Head" },
+      { name: "Eye" },
     ],
   },
 ];
@@ -34,7 +33,7 @@ const format = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
 };
 

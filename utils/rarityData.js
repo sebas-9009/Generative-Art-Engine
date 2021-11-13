@@ -116,7 +116,9 @@ const commonProperties = [
   "regular-mouth",
   // Outfit
   "japanese-outfit",
-  "shirt-outfit"
+  "shirt-outfit",
+  "hoodie-outfit",
+  "beach-outfit"
 ];
 
 const rareProperties = [
@@ -177,7 +179,10 @@ const legendaryProperties = [
   // Mouth
   "tongue-mouth",
   // Outfit
-  "chain-outfit"
+  "chain-outfit",
+  "surgeon-outfit",
+  "biker-outfit",
+  "police-outfit"
 ];
 
 const exoticProperties = [
@@ -204,7 +209,10 @@ const exoticProperties = [
   "zombie-mouth",
   // Outfit
   "blocks-outfit",
-  "luffy-outfit"
+  "luffy-outfit",
+  "akatsuki-outfit",
+  "barcelona-outfit",
+  "lucky-outfit"
 ];
 
 const mythicProperties = [
@@ -228,7 +236,7 @@ const mythicProperties = [
 ];
 
 let attributeRarityDict = {
-  "I should not be here": 0,
+  "I should not be here": 0, //???
   "Common": 1,
   "Rare": 2,
   "Legendary": 3,
