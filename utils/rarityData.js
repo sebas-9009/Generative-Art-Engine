@@ -85,154 +85,172 @@ layerConfigurations.forEach((config) => {
 
 const commonProperties = [
   //Background
-  "aqua-background",
-  "blue-background",
-  "brown-background",
-  "dark-brown-background",
-  "green-background",
-  "lime-background",
-  "pink-background",
-  "purple-background",
-  "red-background",
-  "yellow-background",
-  // Ears
-  "beanie-ears",
-  "elf-ears",
-  "headphone-ears",
-  "piercing-ears",
-  "wing-ears",
+  "Aqua",
+  "Blue",
+  "Brown",
+  "Dark Brown",
+  "Green",
+  "Lime",
+  "Pink",
+  "Purple",
+  "Red",
+  "Yellow",
+  // Head
+  "Beanie",
+  "Elf",
+  "Headphone",
+  "Piercing",
+  "Wings",
   // Eyes
-  "confused-eye",
-  "regular-eye",
-  "sleepy-eye",
+  "Confused",
+  "Crazy",
+  "Cute",
+  "Sleeping",
   // Face
-  "regular-face",
+  "Normal",
+  "Orange",
+  "Pink",
+  "Purple",
+  "Yellow",
   // Fur
-  "green-fur",
-  "red-fur",
-  "white-fur",
+  "Black",
+  "Green",
+  "Red",
+  "White",
   // Mouth
-  "grin-mouth",
-  "regular-mouth",
+  "Happy",
+  "Grin",
   // Outfit
-  "japanese-outfit",
-  "shirt-outfit",
-  "hoodie-outfit",
-  "beach-outfit"
+  "Kimono",
+  "Shirt",
+  "Hoodie",
+  "Beach"
 ];
 
 const rareProperties = [
-  // Ears
-  "birthday-ears",
-  "fancy-ears",
-  "police-ears",
-  "viking-ears",
+  //Background
+  "Forest",
+  // Head
+  "Birthday",
+  "Hat",
+  "Police",
+  "Viking",
   // Eyes
-  "brown-eye",
-  "crazy-eye",
-  "mad-eye",
-  "sad-eye",
+  "Blue",
+  "Brown",
+  "Mad",
+  "Sad",
   // Face
-  "devil-face",
-  "manga-face",
-  "yellow-face",
+  "Devil",
+  "Manga",
   // Fur
-  "aqua-fur",
-  "bricks-fur",
-  "grass-fur",
-  "manga-fur",
-  "pattern-fur",
+  "Aqua",
+  "Bricks",
+  "Grass",
+  "Pattern",
   // Mouth
-  "alien-mouth",
-  "mad-mouth",
-  "sad-mouth",
-  "surprised-mouth",
-  "teeth-mouth",
+  "Alien",
+  "Mad",
+  "Sad",
+  "Surprised",
+  "Teeth",
   // Outfit
-  "christmas-outfit",
-  "security-outfit",
-  "sparkle-outfit",
-  "suit-outfit"
+  "Caution",
+  "Christmas",
+  "Fancy",
+  "Lego",
+  "Suit"
 ];
 
 const legendaryProperties = [
-  // Ears
-  "halo-ears",
-  "horns-ears",
-  "santa-ears",
-  "yarn-ears",
+  // Head
+  "Alpaca",
+  "Halo",
+  "Horns",
+  "Santa",
   // Eyes
-  "blue-eye",
-  "devil-eye",
-  "heart-eye",
-  "stoner-eye",
+  "Devil",
+  "Heart",
+  "Stoned",
   // Face
-  "majin-face",
-  "police-face",
-  "runes-face",
-  "rust-face",
-  "zombie-face",
+  "Buu",
+  "Cyborg",
+  "Paint",
+  "Robot",
+  "Runes",
+  "Zombie",
   // Fur
-  "cotton-candy-fur",
-  "leaves-fur",
-  "runes-fur",
+  "Candy",
+  "Cloth",
+  "Coffee",
+  "Cotton Candy",
+  "Ice",
+  "Leaves",
+  "Runes",
   // Mouth
-  "tongue-mouth",
+  "Tongue",
   // Outfit
-  "chain-outfit",
-  "surgeon-outfit",
-  "biker-outfit",
-  "police-outfit"
+  "Biker",
+  "Chain",
+  "Police",
+  "Surgeon"
 ];
 
 const exoticProperties = [
-  // Ears
-  "anime-ears",
-  "marge-ears",
-  "goku-ears",
-  "lucky-ears",
-  "luffy-ears",
+  // Head
+  "Headband",
+  "Lucky",
+  "Luffy",
+  "Marge",
+  "Pokemon",
+  "SS",
   // Eyes
-  "lucky-eye",
-  "money-eye",
-  "solana-eye",
+  "Dollar",
+  "Lucky",
+  "Solana",
   // Face
-  "rock-face",
+  "Lucky",
+  "Rock",
   // Fur
-  "hairy-fur",
-  "lucky-fur",
-  "rainbow-fur",
-  "rock-fur",
+  "Hairy",
+  "Lucky",
+  "Rainbow",
+  "Rock",
   // Mouth
-  "curse-mouth",
-  "uwu-mouth",
-  "zombie-mouth",
+  "Inappropriate",
+  "Uwu",
+  "Zombie",
   // Outfit
-  "blocks-outfit",
-  "luffy-outfit",
-  "akatsuki-outfit",
-  "barcelona-outfit",
-  "lucky-outfit"
+  "Akatsuki",
+  "Barcelona",
+  "Lucky",
+  "Luffy",
 ];
 
 const mythicProperties = [
-  // Ears
-  "super-saiyan-ears",
+  //Background
+  "Space",
+  // Head
+  "Astronaut",
+  "SSGSS",
   // Eyes
-  "laser-eye",
-  "sharingan-eye",
-  "sage-eye",
+  "Laser",
+  "Sharingan",
+  "Sage Mode Six Paths",
   // Face
-  "stars-face",
-  "sunset-face",
+  "Diamond",
+  "Stars",
+  "Sunset",
   // Fur
-  "diamond-fur",
-  "fireworks-fur",
-  "sunset-fur",
+  "Diamond",
+  "Fireworks",
+  "Sunset",
   // Mouth
-  "gold-mouth",
+  "Gold",
   // Outfit
-  "goku-outfit",
+  "Astronaut",
+   "Goku",
+   "Hokage",
 ];
 
 let attributeRarityDict = {
@@ -360,7 +378,7 @@ for (var key in rarityDict){
   console.log("The edition " + key + " has total points of " + rarityDict[key]);
 }
 
-console.log("For a collection of 1000 we encountered " + fiveCount + " Commons " + tenCount + " Rares " + fifteenCount + " Legendaries " + twentyCount + " Exotics " + fiftyCount + " Mythics")
+console.log("For a collection of 1000 we encountered \n" + fiveCount + " Commons \n" + tenCount + " Rares \n" + fifteenCount + " Legendaries \n" + twentyCount + " Exotics \n" + fiftyCount + " Mythics")
 
 /// End Test Code
 
