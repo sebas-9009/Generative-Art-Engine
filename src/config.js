@@ -58,7 +58,7 @@ const extraMetadata = {
     "name": "Lucky Llama Legion",
     "family": "Lucky Llama Legion"
   },
-  "seller_fee_basis_points": 250,
+  "seller_fee_basis_points": 500,
 };
 
 const rarityDelimiter = "#";

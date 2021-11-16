@@ -117,7 +117,7 @@ const addMetadata = (_dna, _edition) => {
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    compiler: "Llama Society INC. Engine",
+    compiler: "Lucky Llama Legion Engine",
   };
   metadataList.push(tempMetadata);
   attributesList = [];
