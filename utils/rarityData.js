@@ -120,6 +120,7 @@ const commonProperties = [
   // Mouth
   "Happy",
   "Grin",
+  "Mad",
   // Outfit
   "Kimono",
   "Shirt",
@@ -143,14 +144,13 @@ const rareProperties = [
   // Face
   "Devil",
   "Manga",
+  "Robot",
   // Fur
   "Aqua",
   "Bricks",
   "Grass",
   "Pattern",
   // Mouth
-  "Alien",
-  "Mad",
   "Sad",
   "Surprised",
   "Teeth",
@@ -174,9 +174,7 @@ const legendaryProperties = [
   "Stoned",
   // Face
   "Buu",
-  "Cyborg",
   "Paint",
-  "Robot",
   "Runes",
   "Zombie",
   // Fur
@@ -188,6 +186,7 @@ const legendaryProperties = [
   "Leaves",
   "Runes",
   // Mouth
+  "Alien",
   "Tongue",
   // Outfit
   "Biker",
@@ -211,6 +210,7 @@ const exoticProperties = [
   // Face
   "Lucky",
   "Rock",
+  "Cyborg",
   // Fur
   "Hairy",
   "Lucky",
@@ -253,13 +253,22 @@ const mythicProperties = [
    "Hokage",
 ];
 
+// let attributeRarityDict = {
+//   "I should not be here": 0, //???
+//   "Common": 1,
+//   "Rare": 2,
+//   "Legendary": 3,
+//   "Exotic": 4,
+//   "Mythic": 5
+// };
+
 let attributeRarityDict = {
   "I should not be here": 0, //???
-  "Common": 1,
-  "Rare": 2,
-  "Legendary": 3,
-  "Exotic": 4,
-  "Mythic": 5
+  "Common": 2,
+  "Rare": 4,
+  "Legendary": 8,
+  "Exotic": 16,
+  "Mythic": 32
 };
 
 let rarityDict = {};
@@ -286,27 +295,27 @@ data.forEach((element) => {
 
     if (commonProperties.includes(value)){
       rarityDict[editionNumber] = "Common";
-      elementPoints += 1;
+      elementPoints += 2;
     }
 
     else if (rareProperties.includes(value)){
       rarityDict[editionNumber] = "Rare";
-      elementPoints += 2;
+      elementPoints += 4;
     }
 
     else if (legendaryProperties.includes(value)){
       rarityDict[editionNumber] = "Legendary";
-      elementPoints += 4;
+      elementPoints += 8;
     }
 
     else if (exoticProperties.includes(value)){
       rarityDict[editionNumber] = "Exotic";
-      elementPoints += 8;
+      elementPoints += 16;
     }
 
     else if (mythicProperties.includes(value)){
       rarityDict[editionNumber] = "Mythic";
-      elementPoints += 50;
+      elementPoints += 32;
     }
 
     // Compare the previous rarity (initially 0) to the current rarity. If current is larger then overwrite the rarityValue
@@ -345,30 +354,25 @@ data.forEach((element) => {
 // var exoticCount = 0;
 // var mythicCount = 0;
 
-var fiveCount = 0;
 var tenCount = 0;
 var fifteenCount = 0;
-var twentyCount = 0;
+var twentyFiveCount = 0;
 var fiftyCount = 0;
 
 
 // Print the rarities
 for (var key in rarityDict){
 
-  if (rarityDict[key] >= 0 && rarityDict[key] <= 10){
-    fiveCount++;
-  }
-
-  else if (rarityDict[key] >= 11 && rarityDict[key] <= 15){
+  if (rarityDict[key] >= 0 && rarityDict[key] <= 25){
     tenCount++;
   }
 
-  else if (rarityDict[key] >= 16 && rarityDict[key] <= 40){
+  else if (rarityDict[key] >= 26 && rarityDict[key] <= 35){
     fifteenCount++;
   }
 
-  else if (rarityDict[key] >= 41 && rarityDict[key] <= 55){
-    twentyCount++
+  else if (rarityDict[key] >= 36 && rarityDict[key] <= 55){
+    twentyFiveCount++
   }
 
   else if (rarityDict[key] >= 56){
@@ -378,7 +382,7 @@ for (var key in rarityDict){
   console.log("The edition " + key + " has total points of " + rarityDict[key]);
 }
 
-console.log("For a collection of 1000 we encountered \n" + fiveCount + " Commons \n" + tenCount + " Rares \n" + fifteenCount + " Legendaries \n" + twentyCount + " Exotics \n" + fiftyCount + " Mythics")
+console.log("For a collection of 3477 we encountered \n" + tenCount + " Rares \n" + fifteenCount + " Legendaries \n" + twentyFiveCount + " Exotics \n" + fiftyCount + " Mythics")
 
 /// End Test Code
 
