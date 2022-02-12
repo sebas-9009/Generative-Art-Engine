@@ -5,12 +5,12 @@ const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
 const { MODE } = require(path.join(basePath, "src/blendMode.js"));
 const description =
-  "The Llama Legion is lucky to have you and you were lucky enough to join the Llama Legion.";
+  "Welcome to the Lucky Llama Legion!";
 const baseUri = "image.png";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 3477,
+    growEditionSizeTo: 10, //777 - 50 giveaway
     layersOrder: [
       { name: "Background" },
       { name: "Face" },
@@ -38,7 +38,7 @@ const background = {
 };
 
 const extraMetadata = {
-  "symbol": "",
+  "symbol": "LLL",
   "properties": {
     "files": [
       {
@@ -56,9 +56,9 @@ const extraMetadata = {
   },
   "collection" :{
     "name": "Lucky Llama Legion",
-    "family": "Lucky Llama Legion"
+    "family": "Llamas"
   },
-  "seller_fee_basis_points": 500,
+  "seller_fee_basis_points": 1000,
 };
 
 const rarityDelimiter = "#";

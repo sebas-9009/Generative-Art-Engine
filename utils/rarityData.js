@@ -96,6 +96,7 @@ const commonProperties = [
   "Red",
   "Yellow",
   // Head
+  "Normal",
   "Beanie",
   "Elf",
   "Headphone",

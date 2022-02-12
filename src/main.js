@@ -109,15 +109,13 @@ const drawBackground = () => {
 const addMetadata = (_dna, _edition) => {
   let dateTime = Date.now();
   let tempMetadata = {
-    dna: sha1(_dna.join("")),
-    name: `#${_edition}`,
+    name: `Lucky Llama #${_edition}`,
     description: description,
-    image: ``,
+    image: `image.png`,
     edition: _edition,
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    compiler: "Lucky Llama Legion Engine",
   };
   metadataList.push(tempMetadata);
   attributesList = [];
