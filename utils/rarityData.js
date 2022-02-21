@@ -261,7 +261,7 @@ let backgroundDict = {
   "Aqua": 2,
   "Blue": 2,
   "Brown": 2,
-  "Dark Brown": 2,
+  "DarkBrown": 2,
   "Green": 2,
   "Lime": 2,
   "Pink": 2,
@@ -272,32 +272,109 @@ let backgroundDict = {
   "Lucky": 16,
   "Space": 32
 }
+let eyeDict = {
+  "Blue": 4,
+  "Brown": 4,
+  "Confused": 2,
+  "Crazy": 2,
+  "Cute": 2,
+  "Devil": 8,
+  "Dollar": 16,
+  "Heart": 8,
+  "Laser": 32,
+  "Lucky": 16,
+  "Mad": 4,
+  "Sad": 4,
+  "Sage Mode Six Paths": 32,
+  "Sharingan": 32,
+  "Sleeping": 2,
+  "Solana": 16,
+  "Stoned": 8
+}
+let faceDict = {
+  "Buu": 8,
+  "Cyborg": 16,
+  "Devil": 4,
+  "Diamond": 32,
+  "Lucky": 16,
+  "Manga": 4,
+  "Normal": 2,
+  "Orange": 2,
+  "Paint": 8,
+  "Pink": 2,
+  "Purple": 2,
+  "Robot": 4,
+  "Rock": 16,
+  "Runes": 8,
+  "Stars": 32,
+  "Sunset": 32,
+  "Yellow": 2,
+  "Zombie": 8
+}
 
 let testBackground = {
 }
 
 data.forEach((element) => {
   let attributes = element.attributes;
+  //console.log(attributes);
   let editionNumber = element.edition;
   let elementPoints = 0;
+  let attributeName = "";
 
-  attributes.forEach((attribute) => {
-      if (attribute.traitType = "Background"){
+  attributes.forEach((attributes) => {
+
+      if (attributes.traitType = "Background"){
         //This should be Blue
-        attributeName = attribute.value
+        attributeName = attributes.value;
 
         if (backgroundDict.hasOwnProperty(attributeName)){
           testBackground.key = editionNumber;
-          testBackground[editionNumber] += backgroundDict[attributeName];
+          //console.log(testBackground[editionNumber]);
+          testBackground[editionNumber] = parseInt(backgroundDict[attributeName]);
         }
         else {
-          throw 'Background from JSON not found in Background Dictionary';
+          //console.log("ERROR EXCEPTION");
         }
+      }
+      if (attributes.traitType = "Eye"){
+        attributeName = attributes.value;
+        if (eyeDict.hasOwnProperty(attributeName)){
+          testBackground.key = editionNumber;
+          //console.log(testBackground[editionNumber]);
+          testBackground[editionNumber] = testBackground[editionNumber] + parseInt(eyeDict[attributeName]);
+        }
+        else {
+          //console.log("ERROR EXCEPTION");
+        }
+      }
+      // if (attributes.traitType = "Face"){
+      //   attributeName = attributes.value;
+      //   if (faceDict.hasOwnProperty(attributeName)){
+      //     testBackground.key = editionNumber;
+      //     //console.log(testBackground[editionNumber]);
+      //     testBackground[editionNumber] = testBackground[editionNumber] + parseInt(faceDict[attributeName]);
+      //   }
+      //   else {
+      //     //console.log("ERROR EXCEPTION");
+      //   }
+      // }
+      if (attributes.traitType = "Fur"){
+        
+      }
+      if (attributes.traitType = "Head"){
+        
+      }
+      if (attributes.traitType = "Mouth"){
+        
+      }
+      if (attributes.traitType = "Outfit"){
+        
       }
   });
 
 });
-console.log(testBackground)
+console.log(testBackground);
 
 // let attributeRarityDict = {
 //   "I should not be here": 0, //???
@@ -427,10 +504,10 @@ for (var key in rarityDict){
     fiftyCount++
   }
 
-  console.log("The edition " + key + " has total points of " + rarityDict[key]);
+  //console.log("The edition " + key + " has total points of " + rarityDict[key]);
 }
 
-console.log("For a collection of 3477 we encountered \n" + tenCount + " Rares \n" + fifteenCount + " Legendaries \n" + twentyFiveCount + " Exotics \n" + fiftyCount + " Mythics")
+//console.log("For a collection of 3477 we encountered \n" + tenCount + " Rares \n" + fifteenCount + " Legendaries \n" + twentyFiveCount + " Exotics \n" + fiftyCount + " Mythics")
 
 /// End Test Code
 
@@ -452,10 +529,10 @@ for (var layer in rarityData) {
 
 // print out rarity data
 for (var layer in rarityData) {
-  console.log(`Trait type: ${layer}`);
+  //console.log(`Trait type: ${layer}`);
   for (var trait in rarityData[layer]) {
-    console.log(rarityData[layer][trait]);
+    //console.log(rarityData[layer][trait]);
   }
-  console.log();
+  //console.log();
 }
 
