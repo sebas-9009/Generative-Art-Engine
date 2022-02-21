@@ -10,7 +10,7 @@ const baseUri = "image.png";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 999, //999 - 50 giveaway - 200 pre sale
+    growEditionSizeTo: 1,
     layersOrder: [
       { name: "Background" },
       { name: "Face" },

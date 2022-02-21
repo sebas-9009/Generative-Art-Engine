@@ -10,6 +10,7 @@ console.log(path.join(basePath, "/src/config.js"));
 const { layerConfigurations } = require(path.join(basePath, "/src/config.js"));
 
 const { getElements } = require("../src/main.js");
+const { background } = require("../src/config.js");
 
 // read json data
 let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
@@ -197,6 +198,8 @@ const legendaryProperties = [
 ];
 
 const exoticProperties = [
+  //Background
+  "Lucky",
   // Head
   "Headband",
   "Lucky",
@@ -254,6 +257,48 @@ const mythicProperties = [
    "Hokage",
 ];
 
+let backgroundDict = {
+  "Aqua": 2,
+  "Blue": 2,
+  "Brown": 2,
+  "Dark Brown": 2,
+  "Green": 2,
+  "Lime": 2,
+  "Pink": 2,
+  "Purple": 2,
+  "Red": 2,
+  "Yellow": 2,
+  "Forest": 4,
+  "Lucky": 16,
+  "Space": 32
+}
+
+let testBackground = {
+}
+
+data.forEach((element) => {
+  let attributes = element.attributes;
+  let editionNumber = element.edition;
+  let elementPoints = 0;
+
+  attributes.forEach((attribute) => {
+      if (attribute.traitType = "Background"){
+        //This should be Blue
+        attributeName = attribute.value
+
+        if (backgroundDict.hasOwnProperty(attributeName)){
+          testBackground.key = editionNumber;
+          testBackground[editionNumber] += backgroundDict[attributeName];
+        }
+        else {
+          throw 'Background from JSON not found in Background Dictionary';
+        }
+      }
+  });
+
+});
+console.log(testBackground)
+
 // let attributeRarityDict = {
 //   "I should not be here": 0, //???
 //   "Common": 1,
@@ -288,6 +333,8 @@ data.forEach((element) => {
   // Initialize previous rarity
   let previousRarity = 0;
   let rarityValue = 0;
+
+  //Iterate over attributes
   attributes.forEach((attribute) => {
     let traitType = attribute.trait_type;
     let value = attribute.value;

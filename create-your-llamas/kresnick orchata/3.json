@@ -1,0 +1,58 @@
+{
+  "name": "Lucky Llama #3",
+  "description": "Welcome to the Lucky Llama Legion!",
+  "image": "image.png",
+  "edition": 3,
+  "date": 1645289613855,
+  "symbol": "LLL",
+  "properties": {
+    "files": [
+      {
+        "uri": "image.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "FBtvjETjSWELeBf7FZ1AaRmDv2QwXwSzDVyHr2USbui8",
+        "share": 100
+      }
+    ]
+  },
+  "collection": {
+    "name": "Lucky Llama Legion",
+    "family": "Llamas"
+  },
+  "seller_fee_basis_points": 1000,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dark Brown"
+    },
+    {
+      "trait_type": "Face",
+      "value": "Cyborg"
+    },
+    {
+      "trait_type": "Fur",
+      "value": "Runes"
+    },
+    {
+      "trait_type": "Mouth",
+      "value": "Tongue"
+    },
+    {
+      "trait_type": "Outfit",
+      "value": "Biker"
+    },
+    {
+      "trait_type": "Head",
+      "value": "Piercing"
+    },
+    {
+      "trait_type": "Eye",
+      "value": "Mad"
+    }
+  ]
+}

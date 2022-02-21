@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Lucky Llama #0",
+    "description": "Welcome to the Lucky Llama Legion!",
+    "image": "image.png",
+    "edition": 0,
+    "date": 1645288287140,
+    "symbol": "LLL",
+    "properties": {
+      "files": [
+        {
+          "uri": "image.png",
+          "type": "image/png"
+        }
+      ],
+      "category": "image",
+      "creators": [
+        {
+          "address": "FBtvjETjSWELeBf7FZ1AaRmDv2QwXwSzDVyHr2USbui8",
+          "share": 100
+        }
+      ]
+    },
+    "collection": {
+      "name": "Lucky Llama Legion",
+      "family": "Llamas"
+    },
+    "seller_fee_basis_points": 1000,
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Forest"
+      },
+      {
+        "trait_type": "Face",
+        "value": "Devil"
+      },
+      {
+        "trait_type": "Fur",
+        "value": "Black"
+      },
+      {
+        "trait_type": "Mouth",
+        "value": "Tongue"
+      },
+      {
+        "trait_type": "Outfit",
+        "value": "Fancy"
+      },
+      {
+        "trait_type": "Head",
+        "value": "SS"
+      },
+      {
+        "trait_type": "Eye",
+        "value": "Solana"
+      }
+    ]
+  }
+]
