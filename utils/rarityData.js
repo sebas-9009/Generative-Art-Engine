@@ -228,7 +228,7 @@ const exoticProperties = [
   "Akatsuki",
   "Barcelona",
   "Lucky",
-  "Luffy",
+  "Luffy"
 ];
 
 const mythicProperties = [
@@ -253,15 +253,15 @@ const mythicProperties = [
   "Gold",
   // Outfit
   "Astronaut",
-   "Goku",
-   "Hokage",
+  "Goku",
+  "Hokage"
 ];
 
 let backgroundDict = {
   "Aqua": 2,
   "Blue": 2,
   "Brown": 2,
-  "DarkBrown": 2,
+  "Dark Brown": 2,
   "Green": 2,
   "Lime": 2,
   "Pink": 2,
@@ -273,46 +273,135 @@ let backgroundDict = {
   "Space": 32
 }
 let eyeDict = {
-  "Blue": 4,
-  "Brown": 4,
   "Confused": 2,
   "Crazy": 2,
   "Cute": 2,
-  "Devil": 8,
-  "Dollar": 16,
-  "Heart": 8,
-  "Laser": 32,
-  "Lucky": 16,
+  "Sleeping": 2,
+  "Blue": 4,
+  "Brown": 4,
   "Mad": 4,
   "Sad": 4,
-  "Sage Mode Six Paths": 32,
-  "Sharingan": 32,
-  "Sleeping": 2,
+  "Devil": 8,
+  "Heart": 8,
+  "Stoned": 8,
+  "Dollar": 16,
+  "Lucky": 16,
   "Solana": 16,
-  "Stoned": 8
+  "Laser": 32,
+  "Sage Mode Six Paths": 32,
+  "Sharingan": 32
 }
 let faceDict = {
-  "Buu": 8,
-  "Cyborg": 16,
-  "Devil": 4,
-  "Diamond": 32,
-  "Lucky": 16,
-  "Manga": 4,
+  "Pink": 2,
   "Normal": 2,
   "Orange": 2,
-  "Paint": 8,
-  "Pink": 2,
   "Purple": 2,
-  "Robot": 4,
-  "Rock": 16,
-  "Runes": 8,
-  "Stars": 32,
-  "Sunset": 32,
   "Yellow": 2,
-  "Zombie": 8
+  "Manga": 4,
+  "Devil": 4,
+  "Robot": 4,
+  "Buu": 8,
+  "Zombie": 8,
+  "Paint": 8,
+  "Runes": 8,
+  "Cyborg": 16,
+  "Lucky": 16,
+  "Rock": 16,
+  "Diamond": 32,
+  "Stars": 32,
+  "Sunset": 32
 }
 
-let testBackground = {
+let outfitDict = {
+  "Kimono" : 2,
+  "Shirt" : 2,
+  "Hoodie" : 2,
+  "Beach" : 2,
+  "Caution" : 4,
+  "Christmas" : 4,
+  "Fancy" : 4,
+  "Lego" : 4,
+  "Suit" : 4,
+  "Biker" : 8,
+  "Chain" : 8,
+  "Police" : 8,
+  "Surgeon" : 8,
+  "Akatsuki" : 16,
+  "Barcelona" : 16,
+  "Lucky" : 16,
+  "Luffy" : 16,
+  "Astronaut" : 32,
+  "Goku" : 32,
+  "Hokage" : 32
+}
+
+let furDict = {
+  "Black" : 2,
+  "Green" : 2,
+  "Red" : 2,
+  "White" : 2,
+  "Aqua": 4,
+  "Bricks": 4,
+  "Grass": 4,
+  "Pattern": 4,
+  "Candy" : 8,
+  "Cloth" : 8,
+  "Coffee" : 8,
+  "Cotton Candy" : 8,
+  "Ice" : 8,
+  "Leaves" : 8,
+  "Runes" : 8,
+  "Hairy" : 16,
+  "Lucky" : 16,
+  "Rainbow" : 16,
+  "Rock" : 16,
+  "Diamond" : 32,
+  "Fireworks" : 32,
+  "Sunset" : 32
+}
+
+let mouthDict = {
+  "Happy" : 2,
+  "Grin" : 2,
+  "Mad" : 2,
+  "Sad" : 4,
+  "Surprised" : 4,
+  "Teeth" : 4,
+  "Alien" : 8,
+  "Tongue" : 8,
+  "Inappropriate" : 16,
+  "Uwu" : 16,
+  "Zombie" : 16,
+  "Gold" : 32
+}
+
+let headDict = {
+  "Normal" : 2,
+  "Beanie" : 2,
+  "Elf" : 2,
+  "Headphone" : 2,
+  "Piercing" : 2,
+  "Wings" : 2,
+  "Birthday" : 4,
+  "Hat" : 4,
+  "Police" : 4,
+  "Viking" : 4,
+  "Alpaca" : 8,
+  "Halo" : 8,
+  "Horns" : 8,
+  "Santa" : 8,
+  "Headband" : 16,
+  "Lucky" : 16,
+  "Luffy" : 16,
+  "Marge" : 16,
+  "Pokemon" : 16,
+  "SS" : 16,
+  "Astronaut" : 32,
+  "SSGSS" : 32
+}
+
+// Initialize Llama Points Dictionary
+let llamaPoints = {
 }
 
 data.forEach((element) => {
@@ -322,59 +411,180 @@ data.forEach((element) => {
   let elementPoints = 0;
   let attributeName = "";
 
-  attributes.forEach((attributes) => {
+  llamaPoints[editionNumber] = 0;
 
-      if (attributes.traitType = "Background"){
-        //This should be Blue
-        attributeName = attributes.value;
-
+  attributes.forEach((attribute) => {
+      //Background Check
+      if (attribute.trait_type == "Background"){
+        attributeName = attribute.value;
         if (backgroundDict.hasOwnProperty(attributeName)){
-          testBackground.key = editionNumber;
-          //console.log(testBackground[editionNumber]);
-          testBackground[editionNumber] = parseInt(backgroundDict[attributeName]);
+          
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(backgroundDict[attributeName]);
         }
         else {
-          //console.log("ERROR EXCEPTION");
+          throw 'Background in json ' + editionNumber + ' is not found';
         }
       }
-      if (attributes.traitType = "Eye"){
-        attributeName = attributes.value;
+
+      //Eye Check
+      if (attribute.trait_type == "Eye"){
+        attributeName = attribute.value;
         if (eyeDict.hasOwnProperty(attributeName)){
-          testBackground.key = editionNumber;
-          //console.log(testBackground[editionNumber]);
-          testBackground[editionNumber] = testBackground[editionNumber] + parseInt(eyeDict[attributeName]);
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(eyeDict[attributeName]);
         }
         else {
-          //console.log("ERROR EXCEPTION");
+          throw 'Eye in json ' + editionNumber + ' is not found';
         }
       }
-      // if (attributes.traitType = "Face"){
-      //   attributeName = attributes.value;
-      //   if (faceDict.hasOwnProperty(attributeName)){
-      //     testBackground.key = editionNumber;
-      //     //console.log(testBackground[editionNumber]);
-      //     testBackground[editionNumber] = testBackground[editionNumber] + parseInt(faceDict[attributeName]);
-      //   }
-      //   else {
-      //     //console.log("ERROR EXCEPTION");
-      //   }
-      // }
-      if (attributes.traitType = "Fur"){
-        
+
+      //Face Check
+      if (attribute.trait_type == "Face"){
+        attributeName = attribute.value;
+        if (faceDict.hasOwnProperty(attributeName)){
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(faceDict[attributeName]);
+        }
+        else {
+          throw 'Face in json ' + editionNumber + ' is not found';
+        }
       }
-      if (attributes.traitType = "Head"){
-        
+
+      //Mouth Check
+      if (attribute.trait_type == "Mouth"){
+        attributeName = attribute.value;
+        if (mouthDict.hasOwnProperty(attributeName)){
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(mouthDict[attributeName]);
+        }
+        else {
+          throw 'Mouth in json ' + editionNumber + ' is not found';
+        }
       }
-      if (attributes.traitType = "Mouth"){
-        
+
+      //Fur Check
+      if (attribute.trait_type == "Fur"){
+        attributeName = attribute.value;
+        if (furDict.hasOwnProperty(attributeName)){
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(furDict[attributeName]);
+        }
+        else {
+          throw 'Fur in json ' + editionNumber + ' is not found';
+        }
       }
-      if (attributes.traitType = "Outfit"){
-        
+
+      //Outfit Check
+      if (attribute.trait_type == "Outfit"){
+        attributeName = attribute.value;
+        if (outfitDict.hasOwnProperty(attributeName)){
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(outfitDict[attributeName]);
+        }
+        else {
+          throw 'Outfit in json ' + editionNumber + ' is not found';
+        }
+      }
+
+      //Head Check
+      if (attribute.trait_type == "Head"){
+        attributeName = attribute.value;
+        if (headDict.hasOwnProperty(attributeName)){
+          llamaPoints.key = editionNumber;
+          llamaPoints[editionNumber] = llamaPoints[editionNumber] + parseInt(headDict[attributeName]);
+        }
+        else {
+          throw 'Head in json ' + editionNumber + ' is not found';
+        }
       }
   });
 
 });
-console.log(testBackground);
+
+// Remove the last key from llama points
+if (llamaPoints.hasOwnProperty("key")){
+  delete llamaPoints["key"]
+}
+
+// Debug llamaPoints
+//console.log(llamaPoints);
+
+// Initialize Llama Rarity Dictionary
+let llamaRarity = {}
+
+// Grab all point values from point dictionary and convert to rarities
+for (const [key, value] of Object.entries(llamaPoints)) {
+  //Assign the same key to both dictionaries
+  llamaRarity.key = llamaPoints.key
+
+  //Convert point values to rarity
+  if (llamaPoints[key] >= 0 && llamaPoints[key] <= 25){
+    llamaRarity[key] = "Rare";
+  }
+
+  else if (llamaPoints[key] >= 26 && llamaPoints[key] <= 35){
+    llamaRarity[key] = "Legendary";
+  }
+
+  else if (llamaPoints[key] >= 36 && llamaPoints[key] <= 55){
+    llamaRarity[key] = "Exotic";
+  }
+
+  else if (llamaPoints[key] >= 56){
+    llamaRarity[key] = "Mythic";
+  }
+  else {
+    throw "Something went wrong converting points to rarities";
+  }
+
+  // Debug
+  // console.log(key, value);
+  // console.log(llamaRarity[key]);
+}
+
+// Remove the last key from llama points
+if (llamaRarity.hasOwnProperty("key")){
+  delete llamaRarity["key"]
+}
+
+// Debug llama rairity
+//console.log(llamaRarity);
+
+// Count number of Rares, Legendaries, Exotics, and Mythics
+
+var rareCount = 0;
+var legendaryCount = 0;
+var exoticCount = 0;
+var mythicCount = 0;
+
+for (const [key] of Object.entries(llamaRarity)) {
+  if (llamaRarity[key] == "Rare"){
+    rareCount ++;
+  }
+
+  else if (llamaRarity[key] == "Legendary"){
+    legendaryCount++;
+  }
+
+  else if (llamaRarity[key] == "Exotic"){
+    exoticCount++
+  }
+
+  else if (llamaRarity[key] == "Mythic"){
+    mythicCount++;
+  }
+  else {
+    throw "Something went wrong counting the number of rarities";
+  }
+}
+
+console.log("For a collection of " + data.length + " the distribution is: " + '\n'
++ "Rare: " + rareCount + '\n'
++ "Legendary: " + legendaryCount + '\n'
++ "Exotic: " + exoticCount + '\n'
++ "Mythic: " + mythicCount + '\n'
+)
 
 // let attributeRarityDict = {
 //   "I should not be here": 0, //???
@@ -472,18 +682,10 @@ data.forEach((element) => {
   rarityDict[editionNumber] = elementPoints;
 });
 
-// Initialize counter variables
-// var commonCount = 0;
-// var rareCount = 0;
-// var legendaryCount = 0;
-// var exoticCount = 0;
-// var mythicCount = 0;
-
 var tenCount = 0;
 var fifteenCount = 0;
 var twentyFiveCount = 0;
 var fiftyCount = 0;
-
 
 // Print the rarities
 for (var key in rarityDict){
